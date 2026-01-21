@@ -1,5 +1,5 @@
 [package]
-name = "css_playground_backend"
+name = "css_workbench_backend"
 version = "0.1.0"
 edition = "2024"
 

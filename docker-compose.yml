@@ -1,21 +1,21 @@
 services:
   backend:
     build: 
-      context: ./css_playground_backend
+      context: ./css_workbench_backend
       dockerfile: Dockerfile
     ports:
       - "3000:3000"
     depends_on:
       - db
     environment:
-      - DATABASE_URL=postgres://postgres:password@db:5432/css_playground
+      - DATABASE_URL=postgres://postgres:password@db:5432/css_workbench
       - RUST_LOG=debug
     networks:
       - app-network
 
   frontend:
     build:
-      context: ./css_playground_frontend
+      context: ./css_workbench_frontend
       dockerfile: Dockerfile
     ports:
       - "8080:80"
@@ -30,7 +30,7 @@ services:
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=password
-      - POSTGRES_DB=css_playground
+      - POSTGRES_DB=css_workbench
     ports:
       - "5432:5432"
     volumes:
